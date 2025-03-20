@@ -1,0 +1,63 @@
+.section {
+	padding-block: var(--section-padding-y);
+	// padding-inline: 50px; //should check
+	&--hidden-x {
+		overflow-x: hidden;
+	}
+
+	&__header {
+		display: flex;
+		align-items: center;
+		column-gap: 40px;
+
+		@include mobile {
+			flex-direction: column;
+			row-gap: 30px;
+			text-align: center;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 80px;
+
+			@include mobile {
+				margin-bottom: 40px;
+			}
+		}
+
+		h2 {
+			background-color: var(--color-accent);
+			border-radius: 7px;
+			padding-inline: 7px;
+			border: var(--border);
+
+			@include hover {
+				background-color: black;
+				color: aliceblue;
+				cursor: pointer;
+			}
+		}
+	}
+
+	&__description {
+		max-width: 580px;
+
+		// @include mobile {
+		// 	max-width: 390px;
+		// 	text-align: center;
+		// 	font-weight: 400;
+		// }
+	}
+}
+
+@include mobile {
+	.section {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+}
+@include desktop {
+	.section {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+}
